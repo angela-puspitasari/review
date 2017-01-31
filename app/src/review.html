@@ -1,0 +1,36 @@
+<div ng-controller="MainController as vm">{{vm.message}}</div>
+<div ng-controller="ReviewController as vm">
+    <div><img src="http://weathernews.jp/s/topics/img/wni-logo.png" id="header"/></div>
+    <table datatable="ng" class="row-border hover">
+        <thead>
+        <tr>
+            <th>No</th>
+            <th>Date</th>
+            <th>PM</th>
+            <th>PDM</th>
+	    <th>Reviewer</th>
+	    <th>Shop</th>
+	    <th>Project</th>
+	    <th>Development</th>
+	    <th>Type</th>
+	    <th>Location</th>
+	    <th>Comment</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="project in vm.project">
+            <td>{{ project.id }}</td>
+            <td>{{ project.review_date }}</td>
+            <td>{{ project.pm[0].employee.employee_name }}</td>
+            <td>{{ project.pdm }}</td>
+            <td>{{ project.reviewer }}</td>
+            <td>{{ project.shop.shop_name }}</td>
+            <td>{{ project.project.project_name }}</td>
+            <td>{{ project.development.development_detail}}</td>
+            <td>{{ project.review_type.review_type_name }}</td>
+            <td>{{ project.review_location.meeting_space_code}}</td>
+            <td>{{ project.review_comment }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
